@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kamani Ward | Western Region Assistant Vice President 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --gold: #C9A84C;
+      --gold-light: #e8c96e;
+      --gold-dim: #8a6e2e;
+      --white: #f5f0e8;
+      --cream: #ede7d9;
+      --gray: #9a9385;
+      --section-pad: clamp(60px, 8vw, 120px);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 48px;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+      backdrop-filter: blur(2px);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold); text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gray); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh; display: grid; place-items: center;
+      position: relative; overflow: hidden;
+      padding: 120px 48px 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 80%, rgba(201,168,76,0.04) 0%, transparent 60%),
+        var(--black);
+    }
+    .hero-rule {
+      position: absolute; top: 0; left: 48px; right: 48px; height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: 900px; width: 100%;
+      animation: heroReveal 1s cubic-bezier(0.16,1,0.3,1) forwards;
+      opacity: 0; transform: translateY(30px);
+    }
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 900; line-height: 0.95;
+      letter-spacing: -0.02em; color: var(--white); margin-bottom: 32px;
+    }
+    h1 .gold { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 300;
+      color: var(--gray); max-width: 560px; line-height: 1.8; margin-bottom: 48px;
+    }
+    .hero-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-style: italic; color: var(--cream);
+      border-left: 2px solid var(--gold); padding-left: 24px;
+      max-width: 600px; margin-bottom: 56px; line-height: 1.6;
+    }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold); color: var(--black);
+      padding: 14px 36px; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-secondary {
+      border: 1px solid var(--gold-dim); color: var(--gold);
+      padding: 14px 36px; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      text-decoration: none; transition: border-color 0.2s, color 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold-light); transform: translateY(-1px); }
+
+    .divider {
+      width: 100%; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(201,168,76,0.3), transparent);
+    }
+
+    section { padding: var(--section-pad) 48px; }
+    .section-label {
+      font-family: 'DM Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .section-label::before { content: ''; display: block; width: 28px; height: 1px; background: var(--gold); }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 700;
+      line-height: 1.1; color: var(--white); margin-bottom: 48px;
+    }
+
+    /* SCIENCE */
+    #science { max-width: 1100px; margin: 0 auto; }
+    .science-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+    .science-text p {
+      font-size: 1.05rem; color: var(--gray); margin-bottom: 20px; line-height: 1.9;
+    }
+    .science-text p strong { color: var(--white); font-weight: 500; }
+    .science-text .footnote {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem;
+      color: var(--gold-dim); letter-spacing: 0.06em; margin-top: -12px;
+    }
+    .science-credentials { display: flex; flex-direction: column; gap: 20px; }
+    .cred-card {
+      border-left: 2px solid var(--gold-dim); padding: 16px 20px;
+      background: rgba(201,168,76,0.03); transition: border-color 0.2s, background 0.2s;
+    }
+    .cred-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+    .cred-title { font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; color: var(--white); margin-bottom: 4px; }
+    .cred-org { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; color: var(--gold); }
+
+    /* STATS */
+    #stats {
+      background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(10,10,10,0) 60%);
+      border-top: 1px solid rgba(201,168,76,0.12);
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+    .stats-inner { max-width: 1100px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .stat-card {
+      padding: 48px 32px; border: 1px solid rgba(201,168,76,0.1);
+      transition: border-color 0.3s, background 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .stat-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(201,168,76,0.03); opacity: 0; transition: opacity 0.3s;
+    }
+    .stat-card:hover::before { opacity: 1; }
+    .stat-card:hover { border-color: rgba(201,168,76,0.3); }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 4vw, 3.8rem); font-weight: 900;
+      color: var(--gold); line-height: 1; margin-bottom: 12px;
+    }
+    .stat-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+
+    /* PLATFORM */
+    #platform { max-width: 1100px; margin: 0 auto; }
+    .platform-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; }
+    .platform-card {
+      padding: 48px 40px; border: 1px solid rgba(201,168,76,0.1);
+      position: relative; transition: border-color 0.3s;
+    }
+    .platform-card:hover { border-color: rgba(201,168,76,0.25); }
+    .platform-letter {
+      font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900;
+      color: rgba(201,168,76,0.12); position: absolute; top: 24px; right: 32px;
+      line-height: 1; transition: color 0.3s;
+    }
+    .platform-card:hover .platform-letter { color: rgba(201,168,76,0.22); }
+    .platform-tag {
+      font-family: 'DM Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px;
+    }
+    .platform-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;
+      color: var(--white); margin-bottom: 16px; line-height: 1.2;
+    }
+    .platform-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.8; margin-bottom: 20px; }
+    .platform-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .platform-card ul li {
+      font-size: 0.82rem; color: var(--gray); padding-left: 18px; position: relative; line-height: 1.5;
+    }
+    .platform-card ul li::before { content: '—'; position: absolute; left: 0; color: var(--gold-dim); }
+
+    /* DISCLAIMER */
+    #disclaimer {
+      max-width: 700px; margin: 0 auto;
+      text-align: center; padding-bottom: 80px;
+    }
+    .disclaimer-box {
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 32px 40px;
+      background: rgba(201,168,76,0.03);
+    }
+    .disclaimer-box p {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem; letter-spacing: 0.08em;
+      color: var(--gold-dim); line-height: 1.9;
+    }
+    .disclaimer-box p strong { color: var(--gold); }
+
+    /* SUPPORT */
+    #support { text-align: center; }
+    .support-inner { max-width: 680px; margin: 0 auto; }
+    .support-inner p { font-size: 1rem; color: var(--gray); margin-bottom: 40px; line-height: 1.8; }
+    .support-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    footer {
+      padding: 32px 48px;
+      border-top: 1px solid rgba(201,168,76,0.12);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-name { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--gray); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gray); text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    @keyframes heroReveal { to { opacity: 1; transform: translateY(0); } }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      section { padding: 60px 24px; }
+      #hero { padding: 100px 24px 60px; }
+      .science-grid, .platform-grid { grid-template-columns: 1fr; gap: 48px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#" class="nav-logo">Kamani Ward</a>
+    <ul class="nav-links">
+      <li><a href="#science">The Science</a></li>
+      <li><a href="#stats">Results</a></li>
+      <li><a href="#platform">Platform</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-rule"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Alpha Phi Alpha Fraternity, Inc. · Western Region · 2026</div>
+      <h1>Kamani<br/><span class="gold">Ward.</span></h1>
+      <p class="hero-sub">
+        Candidate for Western Region Assistant Vice President<br/>
+        77th Western Regional Convention · 2026<br/><br/>
+        <span style="color:var(--gold); font-weight:500;">#EatButtForBeardGrowth</span>
+      </p>
+      <blockquote class="hero-quote">
+        The beard does not lie. And neither do I. The Western Region deserves leadership with follicle integrity.
+      </blockquote>
+      <div class="hero-ctas">
+        <a href="#platform" class="btn-primary">The Platform</a>
+        <a href="#support" class="btn-secondary">Support the Follicles</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- THE SCIENCE -->
+  <section id="science">
+    <div class="section-label">Background & Research</div>
+    <h2 class="section-title">The Science Is Clear.<br/>The Beard Agrees.</h2>
+    <div class="science-grid reveal">
+      <div class="science-text">
+        <p>
+          In 2021, while serving as <strong>Chapter President of Epsilon Beta</strong>, Kamani Ward noticed something troubling: brothers with lackluster beards were consistently underperforming in chapter operations. He asked himself the question no one else dared to ask.
+        </p>
+        <p>
+          After <strong>14 months of independent field research</strong>, the findings were unambiguous. Gluteal-derived micronutrients — when consumed consistently — demonstrated a statistically significant correlation with accelerated facial hair density, tensile strength, and overall brotherhood vitality.<sup style="color:var(--gold);">†</sup>
+        </p>
+        <p class="footnote">† Source: Ward, K. et al. (2023). "Posterior Nutrition and Follicular Outcomes in Greek-Letter Organizations: A Western Region Case Study." Unpublished. Available upon request. Peer review pending since 2023.</p>
+        <p>
+          As <strong>NPHC Phylacter</strong>, Kamani shared these findings across all nine Divine Nine organizations on campus. Six of nine council presidents reported measurable beard improvement within 90 days. The other three were clean-shaven and unavailable for comment.
+        </p>
+        <p>
+          His subsequent role as <strong>OBSS Advisor</strong> allowed him to integrate beard growth programming into student success frameworks — the first of its kind in the CSU system, and possibly the world.
+        </p>
+      </div>
+      <div class="science-credentials">
+        <div class="cred-card">
+          <div class="cred-title">Lead Researcher & Principal Investigator</div>
+          <div class="cred-org">Institute for Posterior Nutritional Studies (Self-Founded, 2021)</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">Chapter President</div>
+          <div class="cred-org">Epsilon Beta Chapter · Alpha Phi Alpha · Mandatory Beard Policy Enacted SP23</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">NPHC Phylacter</div>
+          <div class="cred-org">Cross-Council Beard Growth Task Force · Chair</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">BSU Secretary</div>
+          <div class="cred-org">Meeting Minutes Noted "Unusually Full Beard" Three Consecutive Semesters</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-title">OBSS Advisor</div>
+          <div class="cred-org">Introduced "Holistic Follicular Wellness" Module to Student Success Curriculum</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- STATS -->
+  <section id="stats">
+    <div class="stats-inner">
+      <div class="section-label">Track Record</div>
+      <h2 class="section-title">Numbers Don't Lie.<br/>Neither Does the Beard.</h2>
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <div class="stat-num">14mo</div>
+          <div class="stat-desc">Duration of independent beard growth research. IRB approval not obtained. No regrets.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">6/9</div>
+          <div class="stat-desc">Divine Nine council presidents who reported measurable beard improvement. The other three remain in denial.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">∞</div>
+          <div class="stat-desc">Number of times Kamani has been asked "how is your beard so full?" The answer is always the same.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">0</div>
+          <div class="stat-desc">Peer-reviewed publications. But the beard speaks for itself and frankly that's more credible.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3x</div>
+          <div class="stat-desc">Consecutive semesters BSU meeting minutes noted "unusually full beard" in attendance records.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">1st</div>
+          <div class="stat-desc">Western Region candidate to run on a platform with a dietary component. Historic. Revolutionary. Unprecedented.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PLATFORM -->
+  <section id="platform">
+    <div class="section-label">Platform</div>
+    <h2 class="section-title">B.U.T.T.<br/>A Vision for the Western Region.</h2>
+    <div class="platform-grid reveal">
+      <div class="platform-card">
+        <div class="platform-letter">B</div>
+        <div class="platform-tag">Pillar One</div>
+        <h3>Brotherhood Through Nutrition</h3>
+        <p>You cannot build strong chapters on empty stomachs and patchy beards. Kamani will ensure every brother in the Western Region has access to the dietary knowledge needed to reach their full follicular potential.</p>
+        <ul>
+          <li>Regional nutrition summit — one full day, no outside food</li>
+          <li>Mandatory beard check-ins at all district conclaves</li>
+          <li>AWEF funding explored for beard growth initiatives</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-letter">U</div>
+        <div class="platform-tag">Pillar Two</div>
+        <h3>Unifying the Region, One Follicle at a Time</h3>
+        <p>A divided region is a beardless region. Kamani's NPHC experience taught him that cross-council beard solidarity is the foundation of lasting Greek unity. This is not a metaphor. Or maybe it is. Both.</p>
+        <ul>
+          <li>Inter-fraternal beard growth accountability circles</li>
+          <li>Monthly "State of the Beard" regional address</li>
+          <li>NPHC beard growth coalition — formal charter in development</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-letter">T</div>
+        <div class="platform-tag">Pillar Three</div>
+        <h3>Transparency in All Things</h3>
+        <p>The Western Region deserves a leader who will tell them hard truths. Hard truths like: your beard could be fuller. It could always be fuller. Kamani will never sugarcoat the beard situation.</p>
+        <ul>
+          <li>Annual "Beard Audit" — results shared publicly, no exceptions</li>
+          <li>Open-door policy for brothers seeking follicular counsel</li>
+          <li>No spin. Just beard growth data, presented plainly.</li>
+        </ul>
+      </div>
+      <div class="platform-card">
+        <div class="platform-letter">T</div>
+        <div class="platform-tag">Pillar Four</div>
+        <h3>Taking the Region Further</h3>
+        <p>Beyond the beard — though the beard is central — Kamani is committed to chapter health, alumni engagement, and making the Western Region a model for the entire fraternity. The beard is a metaphor for excellence. We think.</p>
+        <ul>
+          <li>Chapter health assessments that include, but are not limited to, beard density</li>
+          <li>Alumni mentorship pipeline — bearded alumni preferred</li>
+          <li>Legacy programming that brothers (and their beards) will remember</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- DISCLAIMER -->
+  <section id="disclaimer" style="padding-top: 60px;">
+    <div class="disclaimer-box reveal">
+      <p>
+        <strong>IMPORTANT DISCLAIMER:</strong> This website is a work of satire created for entertainment purposes among brothers only.
+        The "#EatButtForBeardGrowth" movement is entirely fictional. Kamani Ward's actual qualifications — Chapter President, NPHC Phylacter,
+        BSU Secretary, OBSS Advisor — are real and genuinely impressive. The Institute for Posterior Nutritional Studies does not exist.
+        No dietary advice is being given or implied. Please do not actually eat butt for beard growth. Results are not clinically proven.
+        The Western Regional Convention is a real event and deserves to be taken seriously. This website does not.
+        <strong>For the real campaign site, please visit the actual one.</strong>
+      </p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SUPPORT -->
+  <section id="support" style="text-align:center;">
+    <div class="support-inner">
+      <div class="section-label" style="justify-content:center;">Support the Movement</div>
+      <h2 class="section-title">Stand With the Beard.</h2>
+      <p>If you believe in follicle integrity, posterior nutrition, and Western Region excellence — you already know what to do. Share this with a brother who needs it.</p>
+      <div class="support-ctas">
+        <a href="#" class="btn-primary" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied. Send it to a brother.'); return false;">Share This Site</a>
+        <a href="https://instagram.com/kamani4avp" class="btn-secondary" target="_blank">Follow @kamani4avp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-name">Kamani Ward · #EatButtForBeardGrowth · Western Region 2026 · This is a joke.</div>
+    <div class="footer-links">
+      <a href="#">Instagram</a>
+      <a href="#">Share</a>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
