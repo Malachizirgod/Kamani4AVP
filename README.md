@@ -1,4 +1,4 @@
-# #EatButtForBeardGrowth
+# parody website
 
 Parody campaign site. Not real.
 
